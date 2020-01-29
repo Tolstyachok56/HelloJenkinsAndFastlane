@@ -1,0 +1,7 @@
+app_identifier "com.vbadisova.HelloJenkinsAndFastlane" # The bundle identifier of your app
+apple_id "vbadisova@gmail.com" # Your Apple email address
+
+team_id "9E7V52UM47" # Developer Portal Team ID
+
+# you can even provide different app identifiers, Apple IDs and team names per lane:
+# More information: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Appfile.md

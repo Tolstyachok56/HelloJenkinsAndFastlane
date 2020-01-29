@@ -13,6 +13,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
+        label.text = "Hello, Jenkins and Fastlane!"
+        label.textAlignment = .center
+        label.accessibilityIdentifier = "Hello"
+        self.view.addSubview(label)
     }
 
 
