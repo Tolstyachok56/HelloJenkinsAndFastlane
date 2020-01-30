@@ -39,7 +39,7 @@ pipeline {
             }
           }
           steps {
-            sh "echo $USER && fastlane beta"
+            bash "echo $USER && fastlane beta"
           }
         }
     }
