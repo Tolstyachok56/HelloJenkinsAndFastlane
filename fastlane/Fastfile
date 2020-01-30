@@ -35,8 +35,15 @@ platform :ios do
   end
   
   lane :beta do
-    increment_build_number
-    generate_ipa_develop
+    #generate_ipa_develop
+    gym(
+      configuration: "Debug",
+      scheme: "HelloJenkinsAndFastlane",
+      clean: true,
+      export_method: 'development',
+      output_directory: "~/Desktop",
+      output_name: "HelloJenkinsAndFastlane.ipa",
+    )
     #build_app
     #upload_to_appcenter
   end

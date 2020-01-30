@@ -15,10 +15,6 @@ if(env.BRANCH_NAME == "master") {
 pipeline {
     agent any
     
-    options {
-        ansiColor("xterm")
-    }
-    
     stages {
     
         stage('Init') {
@@ -54,7 +50,6 @@ pipeline {
             }
           }
           steps {
-            // Build application for pre-prod servers
             sh "fastlane beta"
           }
         }
@@ -66,7 +61,6 @@ pipeline {
             }
           }
           steps {
-            // Deploy new build to pre-prod environments
           }
         }
     }
