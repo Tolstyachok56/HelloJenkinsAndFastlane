@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
-        label.text = "Hello, Jenkins and Fastlane!"
+        label.text = "TEST Hello, Jenkins and Fastlane!"
         label.textAlignment = .center
         label.accessibilityIdentifier = "Hello"
         self.view.addSubview(label)
