@@ -53,15 +53,5 @@ pipeline {
             sh "fastlane beta"
           }
         }
-        
-        stage('Deploy to beta') {
-          when {
-            expression {
-              return env.shouldBuild != "false"
-            }
-          }
-          steps {
-          }
-        }
     }
 }
