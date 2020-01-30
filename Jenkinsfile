@@ -32,17 +32,6 @@ pipeline {
             }
         }
         
-        stage('Increment build number') {
-          when {
-            expression {
-              return env.shouldBuild != "false"
-            }
-          }
-          steps {
-            sh "fastlane incrementBuildNumberAndCommit"
-          }
-        }
-        
         stage('Build application for beta') {
           when {
             expression {
