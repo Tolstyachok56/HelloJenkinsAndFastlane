@@ -39,7 +39,7 @@ pipeline {
             }
           }
           steps {
-            sh "echo $USER && fastlane beta"
+            sh "/Users/viktoriabadisova/.fastlane/bin/fastlane beta"
           }
         }
     }
