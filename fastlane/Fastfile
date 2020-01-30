@@ -33,7 +33,22 @@ platform :ios do
       output_name: "HelloJenkinsAndFastlane.ipa",
     )
   end
-
+  
+  lane :beta do
+    increment_build_number
+    generate_ipa_develop
+    #build_app
+    #upload_to_appcenter
+  end
+  
+  desc "Increment build number and commit changes to github"
+  lane :incrementBuildNumberAndCommit do
+    ensure_git_status_clean
+    build_number = increment_build_number
+    commit_version_bump(message: "[skip ci] Version Bump to #{build_number}")
+    push_to_git_remote()
+  end
+  
 end
 
 
