@@ -20,17 +20,10 @@ platform :ios do
   lane :beta do
     gym(
       scheme: "HelloJenkinsAndFastlane",
-      export_method: "Development",
+      configuration: "Development",
       clean: true,
-      skip_profile_detection: true,
       output_name: "HelloJenkinsAndFastlane.ipa",
-      output_directory: "~/Desktop",
-      export_options:{
-        signingStyle: "manual",
-          provisioningProfiles:{
-            "com.vbadisova.HelloJenkinsAndFastlane" => "com.vbadisova.HelloJenkinsAndFastlane Development",
-          }
-      }
+      output_directory: "~/Desktop"
     )
   end
 
@@ -46,18 +39,9 @@ platform :ios do
   end
 
   lane :matchPopulateJenkinsKeychain do
-    #register_devices(devices_file: "./fastlane/devices.txt")
-  
-    match(
-      type: "development",
-      git_url: "https://github.com/Tolstyachok56/HelloJenkinsAndFastlane.git",
-      git_branch:"master",
-      username:"vbadisova@gmail.com",
-
-      app_identifier: [
-        "com.vbadisova.HelloJenkinsAndFastlane"
-      ]
-    )
+    cert
+    sign
+    increment_build_number
   end
   
 end
