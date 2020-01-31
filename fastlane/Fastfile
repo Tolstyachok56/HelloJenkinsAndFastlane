@@ -46,7 +46,7 @@ platform :ios do
   end
 
   lane :matchPopulateJenkinsKeychain do
-    register_devices(devices_file: "./fastlane/devices.txt")
+    #register_devices(devices_file: "./fastlane/devices.txt")
   
     match(
       type: "development",
