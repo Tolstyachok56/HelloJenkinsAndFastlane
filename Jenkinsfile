@@ -32,6 +32,28 @@ pipeline {
             }
         }
         
+        stage('Reinitialize jenkins keychain') {
+          when {
+            expression {
+              return env.shouldBuild != "false"
+            }
+          }
+          steps {
+            sh "/Users/viktoriabadisova/.fastlane/bin/fastlane refreshJenkinsKeychain"
+          }
+        }
+        
+        stage('Populate Jenkins Keychain') {
+          when {
+            expression {
+              return env.shouldBuild != "false"
+            }
+          }
+          steps {
+            sh "fastlane matchPopulateJenkinsKeychain"
+          }
+        }
+        
         stage('Build application for beta') {
           when {
             expression {

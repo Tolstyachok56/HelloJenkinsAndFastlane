@@ -1,0 +1,2 @@
+Device ID	Device Name	Device Platform
+e2e4d07cf96f3f2868cb5c82785398a7987405ac	Victoriia's iPhone X	ios

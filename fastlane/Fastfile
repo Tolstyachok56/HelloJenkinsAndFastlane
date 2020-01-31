@@ -16,44 +16,43 @@ fastlane_version "2.28.3"
 default_platform :ios
 
 platform :ios do
-
-  desc "Example"
-  lane :example do
-    puts("this is my first 🚀 lane")
-  end
-
-  desc "Description of what the lane does"
-  lane :generate_ipa_develop do
-    gym(
-      configuration: "Debug",
-      scheme: "HelloJenkinsAndFastlane",
-      clean: true,
-      export_method: 'development',
-      output_directory: "~/Desktop",
-      output_name: "HelloJenkinsAndFastlane.ipa",
-    )
-  end
   
   lane :beta do
-    #generate_ipa_develop
     gym(
-      configuration: "Debug",
       scheme: "HelloJenkinsAndFastlane",
       clean: true,
-      export_method: 'development',
-      output_directory: "~/Desktop",
+      skip_profile_detection: true,
       output_name: "HelloJenkinsAndFastlane.ipa",
+      output_directory: "~/Desktop",
+      export_options:{
+        signingStyle: "manual",
+          provisioningProfiles:{
+            "com.vbadisova.HelloJenkinsAndFastlane": "match Development com.vbadisova.HelloJenkinsAndFastlane",
+          }
+      }
     )
-    #build_app
-    #upload_to_appcenter
   end
+
+  lane :refreshJenkinsKeychain do
+    delete_keychain(name: "jenkins") if File.exists? File.expand_path("~/Library/Keychains/jenkins-db")
+    create_keychain(
+      name: "jenkins",
+      password: "jenkins",
+      timeout: false,
+      lock_when_sleeps: false,
+      unlock: true
+    )
+  end
+
+  lane :matchPopulateJenkinsKeychain do
+    #register_devices(devices_file: "./fastlane/devices.txt")
   
-  desc "Increment build number and commit changes to github"
-  lane :incrementBuildNumberAndCommit do
-    ensure_git_status_clean
-    build_number = increment_build_number
-    commit_version_bump(message: "[skip ci] Version Bump to #{build_number}")
-    push_to_git_remote()
+    match(
+      type: "development",
+      app_identifier: [
+        "com.vbadisova.HelloJenkinsAndFastlane"
+      ]
+    )
   end
   
 end
