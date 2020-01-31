@@ -22,7 +22,6 @@ platform :ios do
       scheme: "HelloJenkinsAndFastlane",
       export_method: "development",
       clean: true,
-      skip_profile_detection: true,
       output_name: "HelloJenkinsAndFastlane.ipa",
       output_directory: "~/Desktop",
       export_options:{
