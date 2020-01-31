@@ -28,7 +28,7 @@ platform :ios do
       export_options:{
         signingStyle: "manual",
           provisioningProfiles:{
-            "com.vbadisova.HelloJenkinsAndFastlane": "match Development com.vbadisova.HelloJenkinsAndFastlane",
+            "com.vbadisova.HelloJenkinsAndFastlane" => "com.vbadisova.HelloJenkinsAndFastlane Development",
           }
       }
     )
@@ -51,6 +51,9 @@ platform :ios do
     match(
       type: "development",
       git_url: "https://github.com/Tolstyachok56/HelloJenkinsAndFastlane.git",
+      git_branch:"master",
+      username:"vbadisova@gmail.com",
+
       app_identifier: [
         "com.vbadisova.HelloJenkinsAndFastlane"
       ]
