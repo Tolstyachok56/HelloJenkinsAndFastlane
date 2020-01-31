@@ -58,7 +58,7 @@ platform :ios do
 #      ]
 #    )
 
-  get_certificates(
+  cert(
     generate_apple_certs: true,
     type: "development",
     username: "vbadisova@gmail.com",
