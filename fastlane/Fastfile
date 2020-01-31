@@ -20,6 +20,7 @@ platform :ios do
   lane :beta do
     gym(
       scheme: "HelloJenkinsAndFastlane",
+      export_method: "Development",
       clean: true,
       skip_profile_detection: true,
       output_name: "HelloJenkinsAndFastlane.ipa",
@@ -49,6 +50,7 @@ platform :ios do
   
     match(
       type: "development",
+      git_url: "https://github.com/Tolstyachok56/HelloJenkinsAndFastlane.git",
       app_identifier: [
         "com.vbadisova.HelloJenkinsAndFastlane"
       ]
