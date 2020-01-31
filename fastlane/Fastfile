@@ -59,8 +59,7 @@ platform :ios do
 #    )
 
   cert(
-    generate_apple_certs: true,
-    type: :development,
+    development: true,
     username: "vbadisova@gmail.com",
     keychain_path: "~/Library/Keychains/jenkins-db",
     keychain_password: "jenkins"
