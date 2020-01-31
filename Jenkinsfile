@@ -50,7 +50,7 @@ pipeline {
             }
           }
           steps {
-            sh "fastlane matchPopulateJenkinsKeychain"
+            sh "/Users/viktoriabadisova/.fastlane/bin/fastlane matchPopulateJenkinsKeychain"
           }
         }
         
