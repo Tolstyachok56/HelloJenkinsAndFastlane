@@ -27,7 +27,7 @@ platform :ios do
       export_options:{
         signingStyle: "manual",
           provisioningProfiles:{
-            "com.vbadisova.HelloJenkinsAndFastlane" => "com.vbadisova.HelloJenkinsAndFastlane Development",
+            "com.vbadisova.HelloJenkinsAndFastlane" => "com.vbadisova.HelloJenkinsAndFastlane Development ios",
           }
       }
     )
