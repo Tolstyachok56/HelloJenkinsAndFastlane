@@ -15,6 +15,10 @@ if(env.BRANCH_NAME == "master") {
 pipeline {
     agent any
     
+    options {
+        ansiColor("xterm")
+    }
+    
     stages {
     
         stage('Init') {
