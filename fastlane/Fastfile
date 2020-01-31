@@ -20,7 +20,7 @@ platform :ios do
   lane :beta do
     gym(
       scheme: "HelloJenkinsAndFastlane",
-      export_method: "Development",
+      export_method: "development",
       clean: true,
       skip_profile_detection: true,
       output_name: "HelloJenkinsAndFastlane.ipa",
