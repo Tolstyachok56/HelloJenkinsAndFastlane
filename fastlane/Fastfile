@@ -22,15 +22,8 @@ platform :ios do
       scheme: "HelloJenkinsAndFastlane",
       export_method: "development",
       clean: true,
-      skip_profile_detection: true,
       output_name: "HelloJenkinsAndFastlane.ipa",
-      output_directory: "~/Desktop",
-      export_options:{
-        signingStyle: "manual",
-          provisioningProfiles:{
-            "com.vbadisova.HelloJenkinsAndFastlane" => "com.vbadisova.HelloJenkinsAndFastlane Development ios",
-          }
-      }
+      output_directory: "~/Desktop"
     )
   end
 
@@ -53,6 +46,10 @@ platform :ios do
     keychain_path: "~/Library/Keychains/jenkins-db",
     keychain_password: "jenkins"
   )
+  sign {
+    development: true
+  }
+}
   end
   
 end
