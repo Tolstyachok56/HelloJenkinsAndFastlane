@@ -49,7 +49,6 @@ platform :ios do
   sign(
     development: true
   )
-}
   end
   
 end
