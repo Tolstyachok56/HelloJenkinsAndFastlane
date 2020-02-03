@@ -22,6 +22,7 @@ platform :ios do
       scheme: "HelloJenkinsAndFastlane",
       export_method: "development",
       clean: true,
+      skip_profile_detection: true,
       output_name: "HelloJenkinsAndFastlane.ipa",
       output_directory: "~/Desktop",
       export_options:{
@@ -45,19 +46,8 @@ platform :ios do
   end
 
   lane :matchPopulateJenkinsKeychain do
-    #register_devices(devices_file: "./fastlane/devices.txt")
-#
-#    match(
-#      type: "development",
-#      git_url: "https://github.com/Tolstyachok56/HelloJenkinsAndFastlane.git",
-#      git_branch:"master",
-#      username:"vbadisova@gmail.com",
-#      app_identifier: [
-#        "com.vbadisova.HelloJenkinsAndFastlane"
-#      ]
-#    )
-
   cert(
+    generate_apple_certs: true,
     development: true,
     username: "vbadisova@gmail.com",
     keychain_path: "~/Library/Keychains/jenkins-db",
