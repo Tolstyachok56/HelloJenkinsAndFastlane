@@ -46,7 +46,7 @@ platform :ios do
     keychain_path: "~/Library/Keychains/jenkins-db",
     keychain_password: "jenkins"
   )
-  sign(
+  sigh(
     development: true
   )
   end
