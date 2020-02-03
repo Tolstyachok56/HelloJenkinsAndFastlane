@@ -43,7 +43,7 @@ pipeline {
             }
           }
           steps {
-            sh "/Users/viktoriabadisova/.fastlane/bin/fastlane matchPopulateJenkinsKeychain"
+            sh "/usr/local/Cellar/fastlane/2.141.0/libexec/gems/fastlane-2.141.0/bin/fastlane matchPopulateJenkinsKeychain"
           }
         }
         
@@ -54,7 +54,7 @@ pipeline {
             }
           }
           steps {
-            sh "/Users/viktoriabadisova/.fastlane/bin/fastlane beta"
+            sh "/usr/local/Cellar/fastlane/2.141.0/libexec/gems/fastlane-2.141.0/bin/fastlane beta"
           }
         }
     }
